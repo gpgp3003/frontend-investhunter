@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>Home</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css">
+     <script src="../js/main.js"></script>
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+     </script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+     </script>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+</head>
+
+<body>
+     <div  class="container">
+          <div id="menu" class="row">
+               <img src="../imgs/logo.png" alt="logo" id="logo">
+               <span id="msg">Meus investimentos!</span>
+               <div id="btnsMenu" class="row">
+                    <button type="button" class="btn btn-light"  onclick="location.href='home.html'"><span>Hunt</span></button>
+                    <button type="button" class="btn btn-light"  ><span>Total Investido</span></button>
+               </div>
+          </div>
+          <div  id="content" class="row">
+
+               <div  id="filtro" class="col-sm-3 card">
+                    <h5 class="text-center">Filtro</h5>
+                    <article class="card-group-item">
+                         <header class="card-header">
+                              <h6 class="title">Valor</h6>
+                         </header>
+                              <div class="card-body">
+                              <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label>Min</label>
+                                <input type="number" class="form-control" id="minPrice" placeholder="$0">
+                              </div>
+                              <div class="form-group col-md-6 text-right">
+                                <label>Max</label>
+                                <input type="number" class="form-control" placeholder="$500">
+                              </div>
+                              </div>
+                              </div> <!-- card-body.// -->
+                    </article> <!-- card-group-item.// -->
+
+                    <article class="card-group-item">
+                              <header class="card-header">
+                                   <h6 class="title">Rendimento</h6>
+                              </header>
+                                   <div class="card-body">
+                                   <div class="form-row">
+                                   <div class="form-group col-md-6">
+                                     <label>Min</label>
+                                     <input type="number" class="form-control" id="minPrice" placeholder="5%">
+                                   </div>
+                                   <div class="form-group col-md-6 text-right">
+                                     <label>Max</label>
+                                     <input type="number" class="form-control" placeholder="20%">
+                                   </div>
+                                   </div>
+                                   </div> <!-- card-body.// -->
+                         </article> <!-- card-group-item.// -->
+                         <article class="card-group-item">
+                                   <header class="card-header">
+                                        <h6 class="title">Vencimento</h6>
+                                   </header>
+                                        <div class="card-body">
+                                                  <input id="date" type="date">
+                                        </div> <!-- card-body.// -->
+                              </article> <!-- card-group-item.// -->
+                    <article class="card-group-item">
+                         <header class="card-header">
+                              <h6 class="title">Tipo </h6>
+                         </header>
+                              <div class="card-body">
+                                   <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="Check1">
+                                          <label class="custom-control-label" for="Check1">CDB</label>
+                                   </div> <!-- form-check.// -->
+               
+                                   <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="Check2">
+                                         <label class="custom-control-label" for="Check2">LCI</label>
+                                   </div> <!-- form-check.// -->
+               
+                                   <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="Check3">
+                                          <label class="custom-control-label" for="Check3">LCA</label>
+                                   </div> <!-- form-check.// -->
+               
+                                   <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="Check4">
+                                          <label class="custom-control-label" for="Check4">DEBENTURE</label>
+                                   </div> <!-- form-check.// -->
+                              </div> <!-- card-body.// -->
+                    </article> <!-- card-group-item.// -->
+
+                    <button type="button" class="btn btn-outline-success" onclick="load()">Hunter it!</button>
+
+               </div> <!-- card.// -->
+
+               <div id="loading" class="spinner-grow" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+               <div id="areaAtivos" class="col ">
+                    
+                      <div id="ativoCard" class="card ml-2">
+                           <div id="cardBodyAtivo" class="card-body text-center">
+                                <h5 class="card-title">XPTO BANCO BRASIL </h5>
+                                <p class="card-text">Valor minimo: R$1000,00</p>
+                                <p class="card-text">Rendimento: 6% a.a.</p>
+                                <p class="card-text">Vencimento: 25/03/2021</p>
+                                <p class="card-text">Corretora: XP Invest</p>
+                                <p class="card-text">Tipo: CDB</p>
+                                <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2" onclick="toCalc()" >Simular</button>
+                                        <div class="collapse" id="collapseExample2">
+                                            <div class="card card-body">
+                                                <input type="number" class="actionner form-control mb-1" placeholder="R$1020,00">
+                                                <button type="button" class="actionner btn btn-outline-success" onclick="egCalc()" >Calcular</button>
+
+                                                <p class="resposta text-left">Bruto: R$1020,00</p>
+                                                <p class="resposta text-left text-danger">IR: 2,10</p>
+                                                <p class="resposta text-left text-danger" >IOF: R$ 4,00</p>
+                                                <p class="resposta text-left  text-success">Liquido: R$1013,90</p>
+                                            </div>
+                                   </div>
+                           </div>
+                      </div>     
+
+                      <div id="ativoCard" class="card ml-2">
+                              <div id="cardBodyAtivo" class="card-body text-center">
+                                   <h5 class="card-title">XPTO BANCO BRASIL </h5>
+                                   <p class="card-text">Valor minimo: R$1000,00</p>
+                                   <p class="card-text">Rendimento: 6% a.a.</p>
+                                   <p class="card-text">Vencimento: 25/03/2021</p>
+                                   <p class="card-text">Corretora: XP Invest</p>
+                                   <p class="card-text">Tipo: CDB</p>
+                                   <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1" onclick="toCalc()" >Simular</button>
+                                        <div class="collapse" id="collapseExample1">
+                                            <div class="card card-body">
+                                                <input type="number" class="actionner form-control mb-1" placeholder="R$2070,00">
+                                                <button type="button" class="actionner btn btn-outline-success" onclick="egCalc()" >Calcular</button>
+
+                                                <p class="resposta text-left">Bruto: R$2070,00</p>
+                                                <p class="resposta text-left text-danger">IR: 40,00</p>
+                                                <p class="resposta text-left text-danger" >IOF: R$ 0,00</p>
+                                                <p class="resposta text-left  text-success">Liquido: R$2030,00</p>
+                                            </div>
+                                   </div>
+                              </div>
+                         </div> 
+
+                         <div id="ativoCard" class="card ml-2">
+                                   <div id="cardBodyAtivo" class="card-body text-center">
+                                        <h5 class="card-title">XPTO BANCO BRASIL </h5>
+                                        <p class="card-text">Valor minimo: R$1000,00</p>
+                                        <p class="card-text">Rendimento: 6% a.a.</p>
+                                        <p class="card-text">Vencimento: 25/03/2021</p>
+                                        <p class="card-text">Corretora: XP Invest</p>
+                                        <p class="card-text">Tipo: CDB</p>
+                                        <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" onclick="toCalc()" >Simular</button>
+                                        <div class="collapse" id="collapseExample">
+                                            <div class="card card-body">
+                                                <input type="number" class="actionner form-control mb-1" placeholder="R$1006,00">
+                                                <button type="button" class="actionner btn btn-outline-success" onclick="egCalc()" >Calcular</button>
+
+                                                <p class="resposta text-left">Bruto: R$1006,00</p>
+                                                <p class="resposta text-left text-danger">IR: 0,10</p>
+                                                <p class="resposta text-left text-danger" >IOF: R$ 0,00</p>
+                                                <p class="resposta text-left  text-success">Liquido: R$1005,90</p>
+                                            </div>
+                                   </div>
+                              </div> 
+
+                              
+                      
+
+               
+               </div>
+          </div>
+
+     </div>
+</body>
+
+</html>

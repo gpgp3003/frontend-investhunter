@@ -1,0 +1,144 @@
+﻿     body {
+          background-color: #ececec !important;
+          font-family: 'Open Sans', sans-serif !important;
+     }
+
+     #menu {
+          display: block;
+          background-color: white;
+          margin-left: 0px;
+          margin-right: 0px;
+          padding-left: 25px;
+          padding-right: 25px;
+          padding-top: 25px;
+     }
+
+     #topo {
+          display: block;
+          background-color: white;
+          margin-left: 0px;
+          margin-right: 0px;
+          padding-left: 25px;
+          padding-right: 25px;
+          margin-top: 50%;
+     }
+
+     #topo2 {
+          display: block;
+          background-color: white;
+          margin-left: 0px;
+          margin-right: 0px;
+          padding-left: 25px;
+          padding-right: 25px;
+          margin-top: 41%;
+          border-radius: 7px 7px;
+          padding-bottom: 55px;
+     }
+
+     #btnsMenu {
+          float: right;
+          align-items: center;
+          padding-right: 10px;
+     }
+
+     #myBtnContainer button {
+          color: #747271;
+     }
+
+     #myBtnContainer {
+          background-color: #ececec;
+          min-width: 180px;
+          text-align: center;
+          padding: 20px;
+          margin-right: 100px;
+          border-radius: 3px 3px;
+     }
+
+     #logo {
+          padding: 17px 0 0 0;
+     }
+
+     #menu button {
+          margin: 30px 10px 0 10px;
+          color: #757271;
+          background-color: #ececec;
+     }
+
+     #content {
+          background-color: white;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin: 0;
+          padding-bottom: 100px;
+          width: 100%;
+          /* height: 100%; */
+     }
+
+     @media (min-width: 1200px) {
+          .container.principal {
+               max-width: 480px;
+          }
+     }
+
+     #box {
+          text-align: center;
+          padding-top: 30px;
+     }
+
+     .form-group {
+          width: 100%;
+     }
+
+     #topo2 button {
+          color: #757271;
+          background-color: #ececec;
+     }
+
+     #msg {
+          margin-left: 150px;
+          color: #747271;
+     }
+
+     .card {
+          color: #747271;
+          margin-top: 40px;
+          border: #1765123b solid 2px !important;
+          border-radius: 10px !important;
+     }
+
+     .card h1 {
+          font-size: 23px;
+     }
+
+     .card h2 {
+          font-size: 19px;
+     }
+
+     #ativoCard{
+
+          /* height: 100%; */
+          width: 250px;
+          float: left;
+          margin-top: 10px;
+     }
+
+
+     #filtro{
+          margin-top: 10px;
+          height: 100%;
+          padding-bottom: 10px;
+     }
+
+.resposta{
+     display: none;
+}
+
+#areaAtivos{
+     display: none;
+}
+
+
+#loading{
+     margin-left: 35%;
+     margin-top: 20%;
+}
