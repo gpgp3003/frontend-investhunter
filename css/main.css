@@ -1,5 +1,10 @@
-﻿     body {
-          background-color: #ececec !important;
+﻿     html {
+          background: url(https://images.iphonephotographyschool.com/22679/1120b/How-To-Blur-Background-On-iPhone.jpg);   
+          background-repeat: no-repeat; 
+          background-size: 100% auto;
+     }
+     body {
+          background-color: #ececec00 !important;
           font-family: 'Open Sans', sans-serif !important;
      }
 
